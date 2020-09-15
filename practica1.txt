@@ -1,0 +1,72 @@
+************************
+* CASO DEMO OCHO PUZLE *
+************************
+ * Fichero main: aima.gui.demo.search
+ * Ficheros módulo: aima.core.environment.eightpuzzle
+
+ aima.gui.demo.search.EightPuzzleDemo.java
+  - Main: Resuelve el juego con siete algoritmos diferentes partiendo
+  - del tablero más sencillo o el tablero random1.
+ aima.core.environment.eightpuzzle.EightPuzzleBoard.java
+  - 1.Espacio de estados S
+  - 2.Estado inicial s perteneciente a S
+ 
+ aima.core.environment.eightpuzzle.EightPuzzleGoalTest.java
+  - 3.Estados objetivos G contenido en S
+ 
+ aima.core.environment.eightpuzzle.EightPuzzleFunctionFactory.java
+  - 4.Acciones aplicables A(s) contenido en A , en cada s perteneciente a S
+  - 5.Función de transición f(s,a), s perteneciente a S y a perteneciente a A. 
+ (6.Función de coste)???
+
+
+
+
+*************
+* ENUNCIADO *
+*************
+ 1.Mostrar los estados por los que se pasa al aplicar las soluciones.
+   Para ello definir el método executeActions, al que pasala lista de acciones solucion 
+   y el problema.
+
+ 2.Resolver problema de los misioneros y caníbales.
+   Mostrar métricas y trazas de ejecución como en el enunciado.
+		Fichero main: CanibalesPract1.java
+		Ficheros modulo:CanibalesBoard.java
+				CanibalesFunctionFactory.java
+				CanibalesGoalTest.java
+
+ 3.En el ocho puzzle, probar todos los algoritmos no informados E INFORMADOS
+    con los tres estados iniciales:
+	boardWithTreeMoveSolution: Se resuelve en 3 pasos
+	random1: Se resuelve en 9 pasos
+	extreme: Se resuelve en 30 pasos
+   Mostrar una tabla de métricas igual que en el enunciado pero AÑADIENDO las métricas de los
+   algoritmos informados.
+   Si no es capaz de resolver en tiempo razonable, comentario (1).
+   Si no tiene memoria suficiente, comentario (2).
+		Fichero main: EighPuzzlePract1.java
+
+ 4. Resolver problema del quince puzzle y hacerle lo mismo que el apartado 3.
+
+
+
+**************
+* VALORACIÓN *
+**************
+
+3	3	2		1		1
+tabla	memoria	canibales	15-puzzle	informadas
+
+
+********************
+* TAREAS PENDIENTES*
+********************
+ - 15-PUZZLE
+ - Añadir algoritmos informados a 8-puzzle y 15-puzzle
+ - Estudiar todos los algoritmos para redactar bien la memoria
+
+
+DUDAS
+- Las busquedas informadas donde
+- Cuantos tableros para fifteenpuzzle
