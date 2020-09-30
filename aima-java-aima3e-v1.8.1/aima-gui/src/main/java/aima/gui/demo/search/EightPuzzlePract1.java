@@ -41,16 +41,13 @@ public class EightPuzzlePract1 {
 			6, 5, 4, 3, 2, 1 });
 
 	public static void main(String[] args) {
-		//Cabecera de las métricas
 		System.out.println("Problema|Profundidad|      Expand|      Q.Size|       MaxQS|      tiempo");
-		//Algoritmos de búsqueda no informada con estado inicial: boardWithThreeMoveSolution
-		busquedaTableroInicial(boardWithThreeMoveSolution, 3); 
-		//Algoritmos de búsqueda no informada con estado inicial: random1
-		busquedaTableroInicial(random1, 9);
-		//Algoritmos de búsqueda no informada con estado inicial: extreme
-		busquedaTableroInicial(extreme, 30);
-		//(3,9,30 es la distancia a la que está el resultado según el estado inicial)
+		busquedaTableroInicial(boardWithThreeMoveSolution, 3);  //Búsquedas no informadas (boardWithThreeMoveSolution)
+		busquedaTableroInicial(random1, 9);  //Búsquedas no informadas (random1)
+		busquedaTableroInicial(extreme, 30); //Búsquedas no informadas (extreme)
+		//3,9,30 es la distancia a la que se encuentra la solución según su respectivo estado inicial
 	}
+	
 	
 	public static void busquedaTableroInicial(EightPuzzleBoard initialState, int pasos) {
 		//***********************************
@@ -60,16 +57,11 @@ public class EightPuzzlePract1 {
 		eightPuzzleSearch(new BreadthFirstSearch(new GraphSearch()), initialState);
 		System.out.print(String.format("%8s","BFS-T-" + pasos)); //En árbol
 		if (pasos == 3 || pasos == 9) {
-			//Para los estados iniciales boardWithThreeMoveSolution y random1
-			//es capaz de llegar a un objetivo
+			//Llega a una solución (boardWithThreeMoveSolution, random1).
 			eightPuzzleSearch(new BreadthFirstSearch(new TreeSearch()), initialState);
 		}
 		else {
-			//Para el estado inicial extreme, no tiene suficiente memoria para llegar al objetivo
-			for (int i = 0; i < 4; i++) {
-				System.out.print("         ---|"); 
-			}
-				System.out.println("         (2)"); 
+			excesivoCoste(2); //Coste excesivo en memoria, memoria insuficiente. (extreme)
 		}
 		
 		//**************************************
@@ -78,13 +70,7 @@ public class EightPuzzlePract1 {
 		System.out.print(String.format("%8s","DFS-G-" + pasos)); //En grafo
 		eightPuzzleSearch(new DepthFirstSearch(new GraphSearch()), initialState);
 		System.out.print(String.format("%8s","DFS-T-" + pasos)); //En árbol
-		//eightPuzzleSearch(new DepthFirstSearch(new TreeSearch()), initialState);
-		//No es capaz de resolver en tiempo razonable con ninguno de los tres estados iniciales		
-		for (int i = 0; i < 4; i++) {
-			System.out.print("         ---|"); 
-		}
-		System.out.println("         (1)");
-		
+		excesivoCoste(1); //Coste excesivo en tiempo para los tres estados iniciales.	
 		
 		//**************************************
 		//Búsqueda en profundidad limitada (DLS)
@@ -93,27 +79,19 @@ public class EightPuzzlePract1 {
 		eightPuzzleSearch(new DepthLimitedSearch(9), initialState);
 		System.out.print(String.format("%8s","DLS-3-" + pasos)); //Límite 3
 		eightPuzzleSearch(new DepthLimitedSearch(3), initialState);
-		
-		
+			
 		//***************************************
 		//Búsqueda en profundidad iterativa (IDS)
 		//***************************************
 		System.out.print(String.format("%8s","IDS-" + pasos)); 
 		if(pasos == 3 || pasos == 9) {
-			//Para los estados iniciales boardWithThreeMoveSolution y random1
-			//es capaz de llegar a un objetivo
+			//Llega a una solución (boardWithThreeMoveSolution, random1).
 			eightPuzzleSearch(new IterativeDeepeningSearch(), initialState);
 		}
 		else {
-			//Para el estado inicial extreme no es capaz de llegar al objetivo en un tiempo razonable
-			for (int i = 0; i < 4; i++) {
-				System.out.print("         ---|"); 
-			}
-				System.out.println("         (1)"); 
-			
+			excesivoCoste(1); //Coste excesivo en tiempo (extreme)
 		}
-		
-		
+				
 		//*************************************
 		//Búsqueda con coste uniforme (UCS)
 		//*************************************
@@ -121,35 +99,25 @@ public class EightPuzzlePract1 {
 		eightPuzzleSearch(new UniformCostSearch(new GraphSearch()), initialState);
 		System.out.print(String.format("%8s","UCS-T-" + pasos));
 		if(pasos == 3 || pasos == 9) {
-			//Para los estados iniciales boardWithThreeMoveSolution y random1
-			//es capaz de llegar a un objetivo
+			//Llega a una solución (boardWithThreeMoveSolution, random1).
 			eightPuzzleSearch(new UniformCostSearch(new TreeSearch()), initialState);
 		}
 		else {
-			//Para el estado inicial extreme no es capaz de llegar al objetivo en un tiempo razonable
-			for (int i = 0; i < 4; i++) {
-				System.out.print("         ---|"); 
-			}
-				System.out.println("         (1)"); 
-			
-		}
-		
-		//***************************************
-		//Búsqueda A*
-		//***************************************
-		//System.out.print(String.format("%8s","A*-G-" + pasos));
-		//eightPuzzleSearch(new AStarSearch(new GraphSearch(), new ManhattanHeuristicFunction()), initialState);
-		
-		//***************************************
-		//Búsqueda voraz
-		//***************************************
-		//System.out.print(String.format("%8s","GS-G-" + pasos));
-		//eightPuzzleSearch(new GreedyBestFirstSearch(new GraphSearch(),new MisplacedTilleHeuristicFunction()), initialState);
-		
-
-		
+			excesivoCoste(2); //Coste excesivo en memoria, memoria insuficiente. (extreme)
+		}	
 	}
 	
+	
+	//Muestra métricas en blanco debido a coste excesivo temporal (tipoCoste = 1) o espacial (tipoCoste = 2)
+	public static void excesivoCoste(int tipoCoste) {
+		for (int i = 0; i < 4; i++) {
+			System.out.print("         ---|"); 
+		}
+		System.out.println("         (" + tipoCoste + ")");
+	}
+	
+	
+	//Muestra distintas métricas asociadas a la ejecución de un algoritmo de búsqueda no informada.
 	private static void eightPuzzleSearch(Search search,EightPuzzleBoard initialState) {
 		try {
 		Problem problem = new Problem(initialState, EightPuzzleFunctionFactory

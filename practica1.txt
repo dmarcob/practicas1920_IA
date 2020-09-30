@@ -70,3 +70,18 @@ tabla	memoria	canibales	15-puzzle	informadas
 DUDAS
 - Las busquedas informadas donde
 - Cuantos tableros para fifteenpuzzle
+
+
+
+
+System.out.format("%15s|%11s|%11s|%11s|%11s|%11s|%11s\n", "Problem", "Depth", "Gener.", "Expand", "Q.Size", "MaxQS", "tiempo");
+
+
+
+public static void eightPuzzleSearch(Search search, Object initialState, String message, boolean execute, String comment)
+long ti = System.currentTimeMillis();
+					ti=System.currentTimeMillis()-ti;
+
+
+
+

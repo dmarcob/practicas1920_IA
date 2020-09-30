@@ -30,37 +30,36 @@ public class CanibalesPract1 {
 				//***********************************
 				System.out.println("Misioneros y canibales BFS_grafo-->"); //En grafo
 				CanibalesSearch(new BreadthFirstSearch(new GraphSearch()), initial);
-				System.out.println("Misioneros y canibales BFS_arbol-->"); //En árbol
+				System.out.println("\n\nMisioneros y canibales BFS_arbol-->"); //En árbol
 				CanibalesSearch(new BreadthFirstSearch(new TreeSearch()), initial);
 				
 				//**************************************
 				//Búsqueda primero en profundidad (DFS)
 				//**************************************
-				System.out.println("Misioneros y canibales DFS_grafo-->"); //En grafo
+				System.out.println("\n\nMisioneros y canibales DFS_grafo-->"); //En grafo
 				CanibalesSearch(new DepthFirstSearch(new GraphSearch()), initial);
-				System.out.println("Misioneros y canibales DFS_arbol-->"); //En árbol
-				//No es capaz de lograr el objetivo en un tiempo razonable
-				//CanibalesSearch(new DepthFirstSearch(new TreeSearch()), initial);
+				System.out.println("\n\nMisioneros y canibales DFS_arbol-->"); //En árbol
+				//No es capaz de encontrar el resultado en un tiempo razonable
 				System.out.println("........(1)");
 				
 				//**************************************
 				//Búsqueda en profundidad limitada (DLS)
 				//**************************************
-				System.out.println("Misioneros y canibales DLS-->"); //Límite 11
+				System.out.println("\n\nMisioneros y canibales DLS-->"); //Límite 11
 				CanibalesSearch(new DepthLimitedSearch(11), initial);
 				
 				//***************************************
 				//Búsqueda en profundidad iterativa (IDS)
 				//***************************************
-				System.out.println("Misioneros y canibales IDS-->"); 
+				System.out.println("\n\nMisioneros y canibales IDS-->"); 
 				CanibalesSearch(new IterativeDeepeningSearch(), initial);
 				
 				//*************************************
 				//Búsqueda con coste uniforme (UCS)
 				//*************************************
-				System.out.println("Misioneros y canibales UCS_grafo-->");
+				System.out.println("\n\nMisioneros y canibales UCS_grafo-->");
 				CanibalesSearch(new UniformCostSearch(new GraphSearch()), initial);
-				System.out.println("Misioneros y canibales UCS-arbol-->");
+				System.out.println("\n\nMisioneros y canibales UCS-arbol-->");
 				CanibalesSearch(new UniformCostSearch(new TreeSearch()), initial);
 	}
 
