@@ -3,9 +3,11 @@ package aima.core.environment.fichas;
 import aima.core.agent.Action;
 import aima.core.environment.map.Map;
 import aima.core.search.framework.StepCostFunction;
-
+/**
+ * @author Diego Marco, 755232
+ * 
+ */
 public class FichasStepCostFunction implements StepCostFunction {
-	private Map map = null;
 
 	//
 	// Used by Uniform-cost search to ensure every step is greater than or equal

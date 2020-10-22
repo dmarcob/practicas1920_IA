@@ -20,6 +20,10 @@ import aima.core.search.uninformed.DepthLimitedSearch;
 import aima.core.search.uninformed.IterativeDeepeningSearch;
 import aima.core.search.uninformed.UniformCostSearch;
 
+/**
+ * @author Diego Marco, 755232
+ * 
+ */
 public class CanibalesPract1 {
 	static CanibalesBoard initial = new CanibalesBoard(
 			new int[] { 3,3,1,0,0});

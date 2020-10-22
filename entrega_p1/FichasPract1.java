@@ -19,7 +19,10 @@ import aima.core.search.uninformed.DepthFirstSearch;
 import aima.core.search.uninformed.DepthLimitedSearch;
 import aima.core.search.uninformed.IterativeDeepeningSearch;
 import aima.core.search.uninformed.UniformCostSearch;
-
+/**
+ * @author Diego Marco, 755232
+ * 
+ */
 public class FichasPract1 {
 
 	 static FichasBoard initial = new FichasBoard(new char[] {'B','B','B',' ','V','V','V'});

@@ -5,7 +5,10 @@ import java.util.Arrays;
 import aima.core.agent.Action;
 import aima.core.agent.impl.DynamicAction;
 import aima.core.environment.eightpuzzle.EightPuzzleBoard;
-
+/**
+ * @author Diego Marco, 755232
+ * 
+ */
 public class FichasBoard {
 	//Mover el hueco a la derecha y la ficha permutada no salta
 	public static Action GapRightJump0 = new DynamicAction("GapRightJump0");

@@ -8,7 +8,10 @@ import aima.core.agent.Action;
 import aima.core.environment.fichas.FichasBoard;
 import aima.core.search.framework.ActionsFunction;
 import aima.core.search.framework.ResultFunction;
-
+/**
+ * @author Diego Marco, 755232
+ * 
+ */
 public class FichasFunctionFactory {
 	private static ActionsFunction _actionsFunction = null;
 	private static ResultFunction _resultFunction = null;

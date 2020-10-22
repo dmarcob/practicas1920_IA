@@ -1,0 +1,22 @@
+blic static void imprime_resultados(int inidepth, int lastdepth, long [][] resultados,double [][] effectiveB) {
+		for(int i = 1; i<91; i++) System.out.print("-"); System.out.println();
+		System.out.format("||    || %20s%17s || %19s%19s||\n","Nodos Generados", " ","b*", " ");	
+		for(int i = 1; i<91; i++) System.out.print("-"); System.out.println();
+		System.out.format("|| %3s||","d");	
+		System.out.format(" %6s  |", "BFS");
+		System.out.format(" %6s  |", "IDS");
+		System.out.format(" %6s  |", "A*
+for(int i = 1; i<91; i++) System.out.print("-"); System.out.println();
+		System.out.format("||    || %20s%17s || %19s%19s||\n","Nodos Generados", " ","b*", " ");	
+		for(int i = 1; i<91; i++) System.out.print("-"); System.out.println();
+System.out.format("|| %3s||","d");	
+		System.out.format(" %6s  |", "BFS");
+		System.out.format(" %6s  |", "IDS");
+		System.out.format(" %6s  |", "A*h(1)");
+		System.out.format(" %6s  ||", "A*h(2)");
+		System.out.format(" %6s  |", "BFS");
+		System.out.format(" %6s  |", "IDS");
+		System.out.format(" %6s  |", "A*h(1)");
+		System.out.format(" %6s  ||\n", "A*h(2)");
+for(int i = 1; i<91; i++) System.out.print("-"); System.out.println();
+		for(int i = 1; i<91; i++) System.out.print("-"); System.out.println();
