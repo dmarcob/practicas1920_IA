@@ -1,0 +1,19 @@
+//GEnerar estados aleatorios únicos
+public static Set<NQueensBoard> generateSetNqueensBoard(int boardSize, int populationSize){
+	Set<NQueensBoard> setGeneratedNQueens = new HashSet<NQueensBoard>();
+
+	while(setGeneratedNQueens.size()< populationSize){
+		setGeneratedNQueens.add(generateRandomNqueensBoard(_boardSize)); 
+		//setGeneratedNQueens.add(Complete1State); test para comprobar que solo a�ade una vez
+	}
+	
+	return setGeneratedNQueens;
+}
+board.addQueenAt(new XYLocation(i, new Random().nextInt(boardSize))
+
+
+//Para saber si encuentra solución o no
+search.getOutcome().toString().contentEquals("SOLUTION_FOUND")
+
+//Para saber cuantos pasos ha dado antes de fallar o acertar
+agent.getActions().size()
