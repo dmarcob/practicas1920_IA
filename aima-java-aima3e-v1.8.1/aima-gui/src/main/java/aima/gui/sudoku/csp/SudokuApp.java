@@ -5,7 +5,11 @@ import aima.core.search.csp.Assignment;
 import aima.core.search.csp.CSP;
 import aima.core.search.csp.ImprovedBacktrackingStrategy;
 import aima.core.search.csp.SolutionStrategy;
-
+/**
+ * 
+ * @author Diego Marco, 755232
+ *
+ */
 
 public class SudokuApp {
 	public static void main(String[] args) throws FileNotFoundException {
@@ -17,7 +21,7 @@ public class SudokuApp {
 		
 		int solucionados = 0;
 		for (Sudoku s : lista) {
-			System.out.println("---------");
+			System.out.println("---------"); 
 			s.imprimeSudoku();
 			if (!s.completo()) {
 				CSP csp = new SudokuProblem(s.pack_celdasAsignadas());
