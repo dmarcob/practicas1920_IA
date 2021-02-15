@@ -1,0 +1,2 @@
+Versión instalada con python 3.7
+Ejecutar anaconda-navigator

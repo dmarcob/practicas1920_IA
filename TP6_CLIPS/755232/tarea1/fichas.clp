@@ -6,6 +6,10 @@
 ;      Se han empleado los modulos: 
 ;      MAIN, OPERACIONES, RESTRICCIONES y SOLUCION
 
+; Para estado separar en slots, para camino una lista de strings
+; assert, modify, retract, implode, create, +, <, neq, test
+; length
+; bind $?nuevoestado 
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;; MODULO MAIN     ;;
@@ -93,7 +97,6 @@
                    (clase cerrado))
 =>
     (bind $?nuevo-estado (create$ $?a H $?c ?b  $?d))
-;    (bind ?coste (+ (length$ ?c) 1))
     (bind ?coste 1)
     (assert(nodo
             (estado $?nuevo-estado)
@@ -109,7 +112,6 @@
                    (clase cerrado))
 =>
     (bind $?nuevo-estado (create$ $?a ?c $?b H  $?d))
-;    (bind ?coste (+ (length$ ?c) 1))
     (bind ?coste 1)
     (assert(nodo
             (estado $?nuevo-estado)
@@ -141,7 +143,3 @@
     (loop-for-count(?i 1 ?size)
     (printout t (nth ?i ?movimientos) crlf))
     (halt))
-
-
-;TODO: Arreglar restriccion 
-;      printear bien la solucion
